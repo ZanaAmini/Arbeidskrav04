@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SoftSensConf")]
-[assembly: AssemblyDescription("SoftSensConf, is a standalone software that communicate through serial protocol over USB with the usnTopSens, and industrial light intensity measurement instrument.")]
+[assembly: AssemblyTitle("Arbeidskrav04")]
+[assembly: AssemblyDescription("Modifisert SoftSenseConf")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Zana(TeamUSN)")]
-[assembly: AssemblyProduct("SoftSensConf")]
+[assembly: AssemblyProduct("SoftSensConf Modifisert")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

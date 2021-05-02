@@ -1,5 +1,5 @@
 ﻿
-namespace FirstGUI
+namespace Arbeidskrav04
 {
     partial class AboutBoxSoft
     {

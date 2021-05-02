@@ -1,7 +1,7 @@
 ﻿
-namespace FirstGUI
+namespace Arbeidskrav04
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace FirstGUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -65,45 +65,6 @@ namespace FirstGUI
             this.buttonLoadData = new System.Windows.Forms.Button();
             this.chartVba = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label3 = new System.Windows.Forms.Label();
-            this.panelOppkobling = new System.Windows.Forms.Panel();
-            this.textBoxReceive = new System.Windows.Forms.TextBox();
-            this.pictureBoxNotConnected = new System.Windows.Forms.PictureBox();
-            this.pictureBoxConnected = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonDisconnect = new System.Windows.Forms.Button();
-            this.buttonConnect = new System.Windows.Forms.Button();
-            this.comboBoxBaud = new System.Windows.Forms.ComboBox();
-            this.comboBoxPorts = new System.Windows.Forms.ComboBox();
-            this.panelKonfigurasjon = new System.Windows.Forms.Panel();
-            this.panelPassword = new System.Windows.Forms.Panel();
-            this.buttonConfirmPassword = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.panelNewSettings = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.buttonReadCurrent = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
-            this.buttonConfirmConfig = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBoxNewLrv = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBoxNewLowAlarm = new System.Windows.Forms.TextBox();
-            this.textBoxNewHighAlarm = new System.Windows.Forms.TextBox();
-            this.textBoxNewUrv = new System.Windows.Forms.TextBox();
-            this.textBoxNewName = new System.Windows.Forms.TextBox();
-            this.textBoxReturn = new System.Windows.Forms.TextBox();
-            this.buttonSaveConfig = new System.Windows.Forms.Button();
-            this.buttonReadConfig = new System.Windows.Forms.Button();
-            this.buttonSendCommand = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxCommand = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
@@ -127,20 +88,106 @@ namespace FirstGUI
             this.labelAlarml = new System.Windows.Forms.Label();
             this.labelAlarmh = new System.Windows.Forms.Label();
             this.saveFileDialogRawData = new System.Windows.Forms.SaveFileDialog();
-            this.label7 = new System.Windows.Forms.Label();
+            this.comboBoxPorts = new System.Windows.Forms.ComboBox();
+            this.comboBoxBaud = new System.Windows.Forms.ComboBox();
+            this.buttonConnect = new System.Windows.Forms.Button();
+            this.buttonDisconnect = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panelKonfigurasjon = new System.Windows.Forms.Panel();
+            this.panelPassword = new System.Windows.Forms.Panel();
+            this.buttonConfirmPassword = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.panelNewSettings = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.buttonReadCurrent = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.buttonSaveConfig = new System.Windows.Forms.Button();
+            this.buttonReadConfig = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxNewLrv = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxNewLowAlarm = new System.Windows.Forms.TextBox();
+            this.textBoxNewHighAlarm = new System.Windows.Forms.TextBox();
+            this.textBoxNewUrv = new System.Windows.Forms.TextBox();
+            this.textBoxNewName = new System.Windows.Forms.TextBox();
+            this.textBoxReturn = new System.Windows.Forms.TextBox();
+            this.buttonSendCommand = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxCommand = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonConfirmConfig = new System.Windows.Forms.Button();
+            this.pictureBoxConnected = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNotConnected = new System.Windows.Forms.PictureBox();
+            this.textBoxReceive = new System.Windows.Forms.TextBox();
+            this.comboBoxRDC = new System.Windows.Forms.ComboBox();
+            this.labelRDC = new System.Windows.Forms.Label();
+            this.textBoxDeviceName = new System.Windows.Forms.TextBox();
+            this.labelRDCNAME = new System.Windows.Forms.Label();
+            this.comboBoxDAU_Info = new System.Windows.Forms.ComboBox();
+            this.labelDAU = new System.Windows.Forms.Label();
+            this.textBoxDAU_Description = new System.Windows.Forms.TextBox();
+            this.textBoxDAU_Comport = new System.Windows.Forms.TextBox();
+            this.textBoxDAU_Baudrate = new System.Windows.Forms.TextBox();
+            this.labelDAU_Description = new System.Windows.Forms.Label();
+            this.panelOppkobling = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.textBoxReadToDB = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.textBoxReturn1 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.buttonSendToDB = new System.Windows.Forms.Button();
+            this.buttonReadOnce = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.buttonTransferDAU = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labelLRV = new System.Windows.Forms.Label();
+            this.textBoxIN_SCANFREQ = new System.Windows.Forms.TextBox();
+            this.textBoxIN_IOTYPE = new System.Windows.Forms.TextBox();
+            this.textBoxIN_TAGNAME = new System.Windows.Forms.TextBox();
+            this.textBoxIN_AHIGH = new System.Windows.Forms.TextBox();
+            this.textBoxIN_URV = new System.Windows.Forms.TextBox();
+            this.textBoxIN_ALOW = new System.Windows.Forms.TextBox();
+            this.textBoxIN_LRV = new System.Windows.Forms.TextBox();
+            this.labelTAG_ID = new System.Windows.Forms.Label();
+            this.comboBoxTAG_ID = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelDAU = new System.Windows.Forms.Panel();
+            this.labelDAU_Baudrate = new System.Windows.Forms.Label();
+            this.labelDAU_Comport = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
             this.panelDockLeft.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelLiveData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartVbaRaw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartVba)).BeginInit();
-            this.panelOppkobling.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNotConnected)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConnected)).BeginInit();
             this.panelKonfigurasjon.SuspendLayout();
             this.panelPassword.SuspendLayout();
             this.panelNewSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConnected)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNotConnected)).BeginInit();
+            this.panelOppkobling.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panelDAU.SuspendLayout();
             this.SuspendLayout();
             // 
             // htmlToolTip1
@@ -158,7 +205,7 @@ namespace FirstGUI
             this.panelDockLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelDockLeft.Location = new System.Drawing.Point(0, 0);
             this.panelDockLeft.Name = "panelDockLeft";
-            this.panelDockLeft.Size = new System.Drawing.Size(181, 582);
+            this.panelDockLeft.Size = new System.Drawing.Size(181, 874);
             this.panelDockLeft.TabIndex = 0;
             // 
             // buttonAbout
@@ -210,6 +257,7 @@ namespace FirstGUI
             this.buttonLiveData.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonLiveData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonLiveData.UseVisualStyleBackColor = true;
+            this.buttonLiveData.Visible = false;
             this.buttonLiveData.Click += new System.EventHandler(this.buttonLiveData_Click);
             // 
             // buttonKonfigurasjon
@@ -551,464 +599,6 @@ namespace FirstGUI
             this.label3.TabIndex = 1;
             this.label3.Text = "Live Data";
             // 
-            // panelOppkobling
-            // 
-            this.panelOppkobling.Controls.Add(this.textBoxReceive);
-            this.panelOppkobling.Controls.Add(this.pictureBoxNotConnected);
-            this.panelOppkobling.Controls.Add(this.pictureBoxConnected);
-            this.panelOppkobling.Controls.Add(this.label6);
-            this.panelOppkobling.Controls.Add(this.label5);
-            this.panelOppkobling.Controls.Add(this.label2);
-            this.panelOppkobling.Controls.Add(this.buttonDisconnect);
-            this.panelOppkobling.Controls.Add(this.buttonConnect);
-            this.panelOppkobling.Controls.Add(this.comboBoxBaud);
-            this.panelOppkobling.Controls.Add(this.comboBoxPorts);
-            this.panelOppkobling.Location = new System.Drawing.Point(203, 0);
-            this.panelOppkobling.Name = "panelOppkobling";
-            this.panelOppkobling.Size = new System.Drawing.Size(824, 534);
-            this.panelOppkobling.TabIndex = 2;
-            // 
-            // textBoxReceive
-            // 
-            this.textBoxReceive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.textBoxReceive.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxReceive.ForeColor = System.Drawing.Color.White;
-            this.textBoxReceive.Location = new System.Drawing.Point(363, 60);
-            this.textBoxReceive.Multiline = true;
-            this.textBoxReceive.Name = "textBoxReceive";
-            this.textBoxReceive.Size = new System.Drawing.Size(257, 164);
-            this.textBoxReceive.TabIndex = 10;
-            // 
-            // pictureBoxNotConnected
-            // 
-            this.pictureBoxNotConnected.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNotConnected.Image")));
-            this.pictureBoxNotConnected.Location = new System.Drawing.Point(254, 144);
-            this.pictureBoxNotConnected.Name = "pictureBoxNotConnected";
-            this.pictureBoxNotConnected.Size = new System.Drawing.Size(64, 67);
-            this.pictureBoxNotConnected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxNotConnected.TabIndex = 9;
-            this.pictureBoxNotConnected.TabStop = false;
-            // 
-            // pictureBoxConnected
-            // 
-            this.pictureBoxConnected.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConnected.Image")));
-            this.pictureBoxConnected.Location = new System.Drawing.Point(254, 144);
-            this.pictureBoxConnected.Name = "pictureBoxConnected";
-            this.pictureBoxConnected.Size = new System.Drawing.Size(64, 67);
-            this.pictureBoxConnected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxConnected.TabIndex = 8;
-            this.pictureBoxConnected.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(26, 105);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 19);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "BAUD Rate";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(27, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 17);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "COM ports";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(24, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 44);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Connection";
-            // 
-            // buttonDisconnect
-            // 
-            this.buttonDisconnect.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDisconnect.ForeColor = System.Drawing.Color.Black;
-            this.buttonDisconnect.Location = new System.Drawing.Point(127, 187);
-            this.buttonDisconnect.Name = "buttonDisconnect";
-            this.buttonDisconnect.Size = new System.Drawing.Size(121, 37);
-            this.buttonDisconnect.TabIndex = 3;
-            this.buttonDisconnect.Text = "Disconnect";
-            this.buttonDisconnect.UseVisualStyleBackColor = true;
-            this.buttonDisconnect.Click += new System.EventHandler(this.buttonDisconnect_Click);
-            // 
-            // buttonConnect
-            // 
-            this.buttonConnect.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.buttonConnect.ForeColor = System.Drawing.Color.Black;
-            this.buttonConnect.Location = new System.Drawing.Point(127, 135);
-            this.buttonConnect.Name = "buttonConnect";
-            this.buttonConnect.Size = new System.Drawing.Size(121, 36);
-            this.buttonConnect.TabIndex = 2;
-            this.buttonConnect.Text = "Connect";
-            this.buttonConnect.UseVisualStyleBackColor = true;
-            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
-            // 
-            // comboBoxBaud
-            // 
-            this.comboBoxBaud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.comboBoxBaud.ForeColor = System.Drawing.Color.White;
-            this.comboBoxBaud.FormattingEnabled = true;
-            this.comboBoxBaud.Items.AddRange(new object[] {
-            "2400",
-            "4800",
-            "9600",
-            "19200",
-            "38400"});
-            this.comboBoxBaud.Location = new System.Drawing.Point(127, 95);
-            this.comboBoxBaud.Name = "comboBoxBaud";
-            this.comboBoxBaud.Size = new System.Drawing.Size(121, 29);
-            this.comboBoxBaud.TabIndex = 1;
-            // 
-            // comboBoxPorts
-            // 
-            this.comboBoxPorts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.comboBoxPorts.ForeColor = System.Drawing.Color.White;
-            this.comboBoxPorts.FormattingEnabled = true;
-            this.comboBoxPorts.Location = new System.Drawing.Point(127, 63);
-            this.comboBoxPorts.Name = "comboBoxPorts";
-            this.comboBoxPorts.Size = new System.Drawing.Size(121, 29);
-            this.comboBoxPorts.TabIndex = 0;
-            this.comboBoxPorts.SelectedIndexChanged += new System.EventHandler(this.comboBoxPorts_SelectedIndexChanged);
-            this.comboBoxPorts.Enter += new System.EventHandler(this.comboBoxPorts_Enter);
-            // 
-            // panelKonfigurasjon
-            // 
-            this.panelKonfigurasjon.Controls.Add(this.panelPassword);
-            this.panelKonfigurasjon.Controls.Add(this.panelNewSettings);
-            this.panelKonfigurasjon.Controls.Add(this.textBoxReturn);
-            this.panelKonfigurasjon.Controls.Add(this.buttonSendCommand);
-            this.panelKonfigurasjon.Controls.Add(this.label11);
-            this.panelKonfigurasjon.Controls.Add(this.label10);
-            this.panelKonfigurasjon.Controls.Add(this.textBoxCommand);
-            this.panelKonfigurasjon.Controls.Add(this.label4);
-            this.panelKonfigurasjon.Location = new System.Drawing.Point(203, 0);
-            this.panelKonfigurasjon.Name = "panelKonfigurasjon";
-            this.panelKonfigurasjon.Size = new System.Drawing.Size(868, 539);
-            this.panelKonfigurasjon.TabIndex = 4;
-            // 
-            // panelPassword
-            // 
-            this.panelPassword.Controls.Add(this.buttonConfirmPassword);
-            this.panelPassword.Controls.Add(this.label18);
-            this.panelPassword.Controls.Add(this.textBoxPassword);
-            this.panelPassword.Location = new System.Drawing.Point(14, 122);
-            this.panelPassword.Name = "panelPassword";
-            this.panelPassword.Size = new System.Drawing.Size(305, 76);
-            this.panelPassword.TabIndex = 14;
-            this.panelPassword.Visible = false;
-            // 
-            // buttonConfirmPassword
-            // 
-            this.buttonConfirmPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConfirmPassword.ForeColor = System.Drawing.Color.Black;
-            this.buttonConfirmPassword.Location = new System.Drawing.Point(194, 35);
-            this.buttonConfirmPassword.Name = "buttonConfirmPassword";
-            this.buttonConfirmPassword.Size = new System.Drawing.Size(69, 23);
-            this.buttonConfirmPassword.TabIndex = 16;
-            this.buttonConfirmPassword.Text = "Confirm";
-            this.buttonConfirmPassword.UseVisualStyleBackColor = true;
-            this.buttonConfirmPassword.Click += new System.EventHandler(this.buttonConfirmPassword_Click);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(15, 14);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(69, 17);
-            this.label18.TabIndex = 15;
-            this.label18.Text = "Password";
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Location = new System.Drawing.Point(14, 34);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(166, 27);
-            this.textBoxPassword.TabIndex = 14;
-            // 
-            // panelNewSettings
-            // 
-            this.panelNewSettings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelNewSettings.Controls.Add(this.label8);
-            this.panelNewSettings.Controls.Add(this.label7);
-            this.panelNewSettings.Controls.Add(this.label21);
-            this.panelNewSettings.Controls.Add(this.buttonReadCurrent);
-            this.panelNewSettings.Controls.Add(this.label17);
-            this.panelNewSettings.Controls.Add(this.buttonSaveConfig);
-            this.panelNewSettings.Controls.Add(this.buttonConfirmConfig);
-            this.panelNewSettings.Controls.Add(this.buttonReadConfig);
-            this.panelNewSettings.Controls.Add(this.label16);
-            this.panelNewSettings.Controls.Add(this.label15);
-            this.panelNewSettings.Controls.Add(this.label14);
-            this.panelNewSettings.Controls.Add(this.textBoxNewLrv);
-            this.panelNewSettings.Controls.Add(this.label13);
-            this.panelNewSettings.Controls.Add(this.label12);
-            this.panelNewSettings.Controls.Add(this.textBoxNewLowAlarm);
-            this.panelNewSettings.Controls.Add(this.textBoxNewHighAlarm);
-            this.panelNewSettings.Controls.Add(this.textBoxNewUrv);
-            this.panelNewSettings.Controls.Add(this.textBoxNewName);
-            this.panelNewSettings.Location = new System.Drawing.Point(376, 60);
-            this.panelNewSettings.Name = "panelNewSettings";
-            this.panelNewSettings.Size = new System.Drawing.Size(440, 456);
-            this.panelNewSettings.TabIndex = 10;
-            this.panelNewSettings.Visible = false;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(18, 305);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(196, 19);
-            this.label21.TabIndex = 38;
-            this.label21.Text = "Read current configuration";
-            // 
-            // buttonReadCurrent
-            // 
-            this.buttonReadCurrent.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReadCurrent.ForeColor = System.Drawing.Color.Black;
-            this.buttonReadCurrent.Location = new System.Drawing.Point(258, 302);
-            this.buttonReadCurrent.Name = "buttonReadCurrent";
-            this.buttonReadCurrent.Size = new System.Drawing.Size(86, 23);
-            this.buttonReadCurrent.TabIndex = 37;
-            this.buttonReadCurrent.Text = "Read";
-            this.buttonReadCurrent.UseVisualStyleBackColor = true;
-            this.buttonReadCurrent.Click += new System.EventHandler(this.buttonReadCurrent_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(18, 331);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(160, 19);
-            this.label17.TabIndex = 36;
-            this.label17.Text = "Set new configuration";
-            // 
-            // buttonConfirmConfig
-            // 
-            this.buttonConfirmConfig.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConfirmConfig.ForeColor = System.Drawing.Color.Black;
-            this.buttonConfirmConfig.Location = new System.Drawing.Point(258, 331);
-            this.buttonConfirmConfig.Name = "buttonConfirmConfig";
-            this.buttonConfirmConfig.Size = new System.Drawing.Size(86, 23);
-            this.buttonConfirmConfig.TabIndex = 35;
-            this.buttonConfirmConfig.Text = "Confirm";
-            this.buttonConfirmConfig.UseVisualStyleBackColor = true;
-            this.buttonConfirmConfig.Click += new System.EventHandler(this.buttonConfirmConfig_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(19, 226);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(79, 17);
-            this.label16.TabIndex = 34;
-            this.label16.Text = "High alarm";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(19, 182);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(77, 17);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "Low alarm";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(19, 135);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(128, 17);
-            this.label14.TabIndex = 32;
-            this.label14.Text = "Upper range value";
-            // 
-            // textBoxNewLrv
-            // 
-            this.textBoxNewLrv.Location = new System.Drawing.Point(176, 77);
-            this.textBoxNewLrv.Name = "textBoxNewLrv";
-            this.textBoxNewLrv.Size = new System.Drawing.Size(168, 27);
-            this.textBoxNewLrv.TabIndex = 31;
-            this.textBoxNewLrv.TextChanged += new System.EventHandler(this.textBoxNewLrv_TextChanged);
-            this.textBoxNewLrv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNewLrv_KeyPress);
-            this.textBoxNewLrv.MouseHover += new System.EventHandler(this.textBoxNewLrv_MouseHover);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(19, 87);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(129, 17);
-            this.label13.TabIndex = 30;
-            this.label13.Text = "Lower range value";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(19, 42);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 17);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Name";
-            // 
-            // textBoxNewLowAlarm
-            // 
-            this.textBoxNewLowAlarm.Location = new System.Drawing.Point(176, 172);
-            this.textBoxNewLowAlarm.Name = "textBoxNewLowAlarm";
-            this.textBoxNewLowAlarm.Size = new System.Drawing.Size(168, 27);
-            this.textBoxNewLowAlarm.TabIndex = 28;
-            this.textBoxNewLowAlarm.TextChanged += new System.EventHandler(this.textBoxNewLowAlarm_TextChanged);
-            this.textBoxNewLowAlarm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNewLowAlarm_KeyPress);
-            this.textBoxNewLowAlarm.MouseHover += new System.EventHandler(this.textBoxNewLowAlarm_MouseHover);
-            // 
-            // textBoxNewHighAlarm
-            // 
-            this.textBoxNewHighAlarm.Location = new System.Drawing.Point(176, 216);
-            this.textBoxNewHighAlarm.Name = "textBoxNewHighAlarm";
-            this.textBoxNewHighAlarm.Size = new System.Drawing.Size(168, 27);
-            this.textBoxNewHighAlarm.TabIndex = 27;
-            this.textBoxNewHighAlarm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNewHighAlarm_KeyPress);
-            this.textBoxNewHighAlarm.MouseHover += new System.EventHandler(this.textBoxNewHighAlarm_MouseHover);
-            // 
-            // textBoxNewUrv
-            // 
-            this.textBoxNewUrv.Location = new System.Drawing.Point(176, 125);
-            this.textBoxNewUrv.Name = "textBoxNewUrv";
-            this.textBoxNewUrv.Size = new System.Drawing.Size(168, 27);
-            this.textBoxNewUrv.TabIndex = 26;
-            this.textBoxNewUrv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNewUrv_KeyPress);
-            this.textBoxNewUrv.MouseHover += new System.EventHandler(this.textBoxNewUrv_MouseHover);
-            // 
-            // textBoxNewName
-            // 
-            this.textBoxNewName.Location = new System.Drawing.Point(176, 35);
-            this.textBoxNewName.Name = "textBoxNewName";
-            this.textBoxNewName.Size = new System.Drawing.Size(168, 27);
-            this.textBoxNewName.TabIndex = 25;
-            // 
-            // textBoxReturn
-            // 
-            this.textBoxReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.textBoxReturn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxReturn.ForeColor = System.Drawing.Color.White;
-            this.textBoxReturn.Location = new System.Drawing.Point(25, 226);
-            this.textBoxReturn.Multiline = true;
-            this.textBoxReturn.Name = "textBoxReturn";
-            this.textBoxReturn.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxReturn.Size = new System.Drawing.Size(275, 187);
-            this.textBoxReturn.TabIndex = 9;
-            this.textBoxReturn.TextChanged += new System.EventHandler(this.textBoxReturn_TextChanged);
-            // 
-            // buttonSaveConfig
-            // 
-            this.buttonSaveConfig.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSaveConfig.ForeColor = System.Drawing.Color.Black;
-            this.buttonSaveConfig.Location = new System.Drawing.Point(258, 411);
-            this.buttonSaveConfig.Name = "buttonSaveConfig";
-            this.buttonSaveConfig.Size = new System.Drawing.Size(86, 23);
-            this.buttonSaveConfig.TabIndex = 8;
-            this.buttonSaveConfig.Text = "Save";
-            this.buttonSaveConfig.UseVisualStyleBackColor = true;
-            this.buttonSaveConfig.Click += new System.EventHandler(this.buttonSaveConfig_Click);
-            // 
-            // buttonReadConfig
-            // 
-            this.buttonReadConfig.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReadConfig.ForeColor = System.Drawing.Color.Black;
-            this.buttonReadConfig.Location = new System.Drawing.Point(258, 382);
-            this.buttonReadConfig.Name = "buttonReadConfig";
-            this.buttonReadConfig.Size = new System.Drawing.Size(86, 23);
-            this.buttonReadConfig.TabIndex = 7;
-            this.buttonReadConfig.Text = "Load";
-            this.buttonReadConfig.UseVisualStyleBackColor = true;
-            this.buttonReadConfig.Click += new System.EventHandler(this.buttonReadConfig_Click);
-            // 
-            // buttonSendCommand
-            // 
-            this.buttonSendCommand.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSendCommand.ForeColor = System.Drawing.Color.Black;
-            this.buttonSendCommand.Location = new System.Drawing.Point(204, 86);
-            this.buttonSendCommand.Name = "buttonSendCommand";
-            this.buttonSendCommand.Size = new System.Drawing.Size(69, 23);
-            this.buttonSendCommand.TabIndex = 6;
-            this.buttonSendCommand.Text = "Send";
-            this.buttonSendCommand.UseVisualStyleBackColor = true;
-            this.buttonSendCommand.Click += new System.EventHandler(this.buttonSendCommand_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(25, 206);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 17);
-            this.label11.TabIndex = 5;
-            this.label11.Text = "Return:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(26, 60);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(116, 17);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Send command:";
-            // 
-            // textBoxCommand
-            // 
-            this.textBoxCommand.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBoxCommand.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCommand.ForeColor = System.Drawing.Color.White;
-            this.textBoxCommand.Location = new System.Drawing.Point(25, 81);
-            this.textBoxCommand.Multiline = true;
-            this.textBoxCommand.Name = "textBoxCommand";
-            this.textBoxCommand.Size = new System.Drawing.Size(162, 35);
-            this.textBoxCommand.TabIndex = 2;
-            this.textBoxCommand.Enter += new System.EventHandler(this.textBoxCommand_Enter);
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(20, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(185, 44);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Configuration";
-            // 
             // textBoxStatus
             // 
             this.textBoxStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
@@ -1166,17 +756,174 @@ namespace FirstGUI
             this.labelAlarmh.Text = "HIGH ALARM";
             this.labelAlarmh.Visible = false;
             // 
-            // label7
+            // comboBoxPorts
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(18, 385);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(197, 19);
-            this.label7.TabIndex = 39;
-            this.label7.Text = "Load configuration from file";
+            this.comboBoxPorts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.comboBoxPorts.ForeColor = System.Drawing.Color.White;
+            this.comboBoxPorts.FormattingEnabled = true;
+            this.comboBoxPorts.Location = new System.Drawing.Point(848, 57);
+            this.comboBoxPorts.Name = "comboBoxPorts";
+            this.comboBoxPorts.Size = new System.Drawing.Size(121, 29);
+            this.comboBoxPorts.TabIndex = 0;
+            this.comboBoxPorts.SelectedIndexChanged += new System.EventHandler(this.comboBoxPorts_SelectedIndexChanged);
+            this.comboBoxPorts.Enter += new System.EventHandler(this.comboBoxPorts_Enter);
+            // 
+            // comboBoxBaud
+            // 
+            this.comboBoxBaud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.comboBoxBaud.ForeColor = System.Drawing.Color.White;
+            this.comboBoxBaud.FormattingEnabled = true;
+            this.comboBoxBaud.Items.AddRange(new object[] {
+            "2400",
+            "4800",
+            "9600",
+            "19200",
+            "38400"});
+            this.comboBoxBaud.Location = new System.Drawing.Point(980, 57);
+            this.comboBoxBaud.Name = "comboBoxBaud";
+            this.comboBoxBaud.Size = new System.Drawing.Size(121, 29);
+            this.comboBoxBaud.TabIndex = 1;
+            // 
+            // buttonConnect
+            // 
+            this.buttonConnect.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.buttonConnect.ForeColor = System.Drawing.Color.Black;
+            this.buttonConnect.Location = new System.Drawing.Point(848, 92);
+            this.buttonConnect.Name = "buttonConnect";
+            this.buttonConnect.Size = new System.Drawing.Size(183, 36);
+            this.buttonConnect.TabIndex = 2;
+            this.buttonConnect.Text = "Connect";
+            this.buttonConnect.UseVisualStyleBackColor = true;
+            this.buttonConnect.Click += new System.EventHandler(this.buttonConnect_Click);
+            // 
+            // buttonDisconnect
+            // 
+            this.buttonDisconnect.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDisconnect.ForeColor = System.Drawing.Color.Black;
+            this.buttonDisconnect.Location = new System.Drawing.Point(848, 133);
+            this.buttonDisconnect.Name = "buttonDisconnect";
+            this.buttonDisconnect.Size = new System.Drawing.Size(183, 37);
+            this.buttonDisconnect.TabIndex = 3;
+            this.buttonDisconnect.Text = "Disconnect";
+            this.buttonDisconnect.UseVisualStyleBackColor = true;
+            this.buttonDisconnect.Click += new System.EventHandler(this.buttonDisconnect_Click);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Gray;
+            this.label2.Location = new System.Drawing.Point(24, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(366, 44);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Connect to Database";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(845, 37);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(77, 17);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "COM ports";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(976, 35);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 19);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "BAUD Rate";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panelKonfigurasjon
+            // 
+            this.panelKonfigurasjon.Controls.Add(this.panelPassword);
+            this.panelKonfigurasjon.Controls.Add(this.panelNewSettings);
+            this.panelKonfigurasjon.Controls.Add(this.textBoxReturn);
+            this.panelKonfigurasjon.Controls.Add(this.buttonSendCommand);
+            this.panelKonfigurasjon.Controls.Add(this.label11);
+            this.panelKonfigurasjon.Controls.Add(this.label10);
+            this.panelKonfigurasjon.Controls.Add(this.textBoxCommand);
+            this.panelKonfigurasjon.Controls.Add(this.label4);
+            this.panelKonfigurasjon.Location = new System.Drawing.Point(1614, 554);
+            this.panelKonfigurasjon.Name = "panelKonfigurasjon";
+            this.panelKonfigurasjon.Size = new System.Drawing.Size(868, 539);
+            this.panelKonfigurasjon.TabIndex = 4;
+            this.panelKonfigurasjon.Visible = false;
+            // 
+            // panelPassword
+            // 
+            this.panelPassword.Controls.Add(this.buttonConfirmPassword);
+            this.panelPassword.Controls.Add(this.label18);
+            this.panelPassword.Controls.Add(this.textBoxPassword);
+            this.panelPassword.Location = new System.Drawing.Point(14, 122);
+            this.panelPassword.Name = "panelPassword";
+            this.panelPassword.Size = new System.Drawing.Size(305, 76);
+            this.panelPassword.TabIndex = 14;
+            this.panelPassword.Visible = false;
+            // 
+            // buttonConfirmPassword
+            // 
+            this.buttonConfirmPassword.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConfirmPassword.ForeColor = System.Drawing.Color.Black;
+            this.buttonConfirmPassword.Location = new System.Drawing.Point(194, 35);
+            this.buttonConfirmPassword.Name = "buttonConfirmPassword";
+            this.buttonConfirmPassword.Size = new System.Drawing.Size(69, 23);
+            this.buttonConfirmPassword.TabIndex = 16;
+            this.buttonConfirmPassword.Text = "Confirm";
+            this.buttonConfirmPassword.UseVisualStyleBackColor = true;
+            this.buttonConfirmPassword.Click += new System.EventHandler(this.buttonConfirmPassword_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(15, 14);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(69, 17);
+            this.label18.TabIndex = 15;
+            this.label18.Text = "Password";
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Location = new System.Drawing.Point(14, 34);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(166, 27);
+            this.textBoxPassword.TabIndex = 14;
+            // 
+            // panelNewSettings
+            // 
+            this.panelNewSettings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelNewSettings.Controls.Add(this.label8);
+            this.panelNewSettings.Controls.Add(this.label7);
+            this.panelNewSettings.Controls.Add(this.label21);
+            this.panelNewSettings.Controls.Add(this.buttonReadCurrent);
+            this.panelNewSettings.Controls.Add(this.label17);
+            this.panelNewSettings.Controls.Add(this.buttonSaveConfig);
+            this.panelNewSettings.Controls.Add(this.buttonReadConfig);
+            this.panelNewSettings.Controls.Add(this.label16);
+            this.panelNewSettings.Controls.Add(this.label15);
+            this.panelNewSettings.Controls.Add(this.label14);
+            this.panelNewSettings.Controls.Add(this.textBoxNewLrv);
+            this.panelNewSettings.Controls.Add(this.label13);
+            this.panelNewSettings.Controls.Add(this.label12);
+            this.panelNewSettings.Controls.Add(this.textBoxNewLowAlarm);
+            this.panelNewSettings.Controls.Add(this.textBoxNewHighAlarm);
+            this.panelNewSettings.Controls.Add(this.textBoxNewUrv);
+            this.panelNewSettings.Controls.Add(this.textBoxNewName);
+            this.panelNewSettings.Location = new System.Drawing.Point(376, 60);
+            this.panelNewSettings.Name = "panelNewSettings";
+            this.panelNewSettings.Size = new System.Drawing.Size(440, 456);
+            this.panelNewSettings.TabIndex = 10;
+            this.panelNewSettings.Visible = false;
             // 
             // label8
             // 
@@ -1190,15 +937,771 @@ namespace FirstGUI
             this.label8.TabIndex = 40;
             this.label8.Text = "Save configuration to file";
             // 
-            // Form1
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(18, 385);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(197, 19);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Load configuration from file";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(18, 305);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(196, 19);
+            this.label21.TabIndex = 38;
+            this.label21.Text = "Read current configuration";
+            // 
+            // buttonReadCurrent
+            // 
+            this.buttonReadCurrent.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReadCurrent.ForeColor = System.Drawing.Color.Black;
+            this.buttonReadCurrent.Location = new System.Drawing.Point(258, 302);
+            this.buttonReadCurrent.Name = "buttonReadCurrent";
+            this.buttonReadCurrent.Size = new System.Drawing.Size(86, 23);
+            this.buttonReadCurrent.TabIndex = 37;
+            this.buttonReadCurrent.Text = "Read";
+            this.buttonReadCurrent.UseVisualStyleBackColor = true;
+            this.buttonReadCurrent.Click += new System.EventHandler(this.buttonReadCurrent_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.White;
+            this.label17.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(18, 331);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(160, 19);
+            this.label17.TabIndex = 36;
+            this.label17.Text = "Set new configuration";
+            // 
+            // buttonSaveConfig
+            // 
+            this.buttonSaveConfig.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSaveConfig.ForeColor = System.Drawing.Color.Black;
+            this.buttonSaveConfig.Location = new System.Drawing.Point(258, 411);
+            this.buttonSaveConfig.Name = "buttonSaveConfig";
+            this.buttonSaveConfig.Size = new System.Drawing.Size(86, 23);
+            this.buttonSaveConfig.TabIndex = 8;
+            this.buttonSaveConfig.Text = "Save";
+            this.buttonSaveConfig.UseVisualStyleBackColor = true;
+            this.buttonSaveConfig.Click += new System.EventHandler(this.buttonSaveConfig_Click);
+            // 
+            // buttonReadConfig
+            // 
+            this.buttonReadConfig.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReadConfig.ForeColor = System.Drawing.Color.Black;
+            this.buttonReadConfig.Location = new System.Drawing.Point(258, 382);
+            this.buttonReadConfig.Name = "buttonReadConfig";
+            this.buttonReadConfig.Size = new System.Drawing.Size(86, 23);
+            this.buttonReadConfig.TabIndex = 7;
+            this.buttonReadConfig.Text = "Load";
+            this.buttonReadConfig.UseVisualStyleBackColor = true;
+            this.buttonReadConfig.Click += new System.EventHandler(this.buttonReadConfig_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(19, 226);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(79, 17);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "High alarm";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(19, 182);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(77, 17);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "Low alarm";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(19, 135);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(128, 17);
+            this.label14.TabIndex = 32;
+            this.label14.Text = "Upper range value";
+            // 
+            // textBoxNewLrv
+            // 
+            this.textBoxNewLrv.Location = new System.Drawing.Point(176, 77);
+            this.textBoxNewLrv.Name = "textBoxNewLrv";
+            this.textBoxNewLrv.Size = new System.Drawing.Size(168, 27);
+            this.textBoxNewLrv.TabIndex = 31;
+            this.textBoxNewLrv.TextChanged += new System.EventHandler(this.textBoxNewLrv_TextChanged);
+            this.textBoxNewLrv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNewLrv_KeyPress);
+            this.textBoxNewLrv.MouseHover += new System.EventHandler(this.textBoxNewLrv_MouseHover);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(19, 87);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(129, 17);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Lower range value";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(19, 42);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(48, 17);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Name";
+            // 
+            // textBoxNewLowAlarm
+            // 
+            this.textBoxNewLowAlarm.Location = new System.Drawing.Point(176, 172);
+            this.textBoxNewLowAlarm.Name = "textBoxNewLowAlarm";
+            this.textBoxNewLowAlarm.Size = new System.Drawing.Size(168, 27);
+            this.textBoxNewLowAlarm.TabIndex = 28;
+            this.textBoxNewLowAlarm.TextChanged += new System.EventHandler(this.textBoxNewLowAlarm_TextChanged);
+            this.textBoxNewLowAlarm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNewLowAlarm_KeyPress);
+            this.textBoxNewLowAlarm.MouseHover += new System.EventHandler(this.textBoxNewLowAlarm_MouseHover);
+            // 
+            // textBoxNewHighAlarm
+            // 
+            this.textBoxNewHighAlarm.Location = new System.Drawing.Point(176, 216);
+            this.textBoxNewHighAlarm.Name = "textBoxNewHighAlarm";
+            this.textBoxNewHighAlarm.Size = new System.Drawing.Size(168, 27);
+            this.textBoxNewHighAlarm.TabIndex = 27;
+            this.textBoxNewHighAlarm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNewHighAlarm_KeyPress);
+            this.textBoxNewHighAlarm.MouseHover += new System.EventHandler(this.textBoxNewHighAlarm_MouseHover);
+            // 
+            // textBoxNewUrv
+            // 
+            this.textBoxNewUrv.Location = new System.Drawing.Point(176, 125);
+            this.textBoxNewUrv.Name = "textBoxNewUrv";
+            this.textBoxNewUrv.Size = new System.Drawing.Size(168, 27);
+            this.textBoxNewUrv.TabIndex = 26;
+            this.textBoxNewUrv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNewUrv_KeyPress);
+            this.textBoxNewUrv.MouseHover += new System.EventHandler(this.textBoxNewUrv_MouseHover);
+            // 
+            // textBoxNewName
+            // 
+            this.textBoxNewName.Location = new System.Drawing.Point(176, 35);
+            this.textBoxNewName.Name = "textBoxNewName";
+            this.textBoxNewName.Size = new System.Drawing.Size(168, 27);
+            this.textBoxNewName.TabIndex = 25;
+            // 
+            // textBoxReturn
+            // 
+            this.textBoxReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.textBoxReturn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxReturn.ForeColor = System.Drawing.Color.White;
+            this.textBoxReturn.Location = new System.Drawing.Point(25, 226);
+            this.textBoxReturn.Multiline = true;
+            this.textBoxReturn.Name = "textBoxReturn";
+            this.textBoxReturn.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxReturn.Size = new System.Drawing.Size(275, 187);
+            this.textBoxReturn.TabIndex = 9;
+            this.textBoxReturn.TextChanged += new System.EventHandler(this.textBoxReturn_TextChanged);
+            // 
+            // buttonSendCommand
+            // 
+            this.buttonSendCommand.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSendCommand.ForeColor = System.Drawing.Color.Black;
+            this.buttonSendCommand.Location = new System.Drawing.Point(204, 86);
+            this.buttonSendCommand.Name = "buttonSendCommand";
+            this.buttonSendCommand.Size = new System.Drawing.Size(69, 23);
+            this.buttonSendCommand.TabIndex = 6;
+            this.buttonSendCommand.Text = "Send";
+            this.buttonSendCommand.UseVisualStyleBackColor = true;
+            this.buttonSendCommand.Click += new System.EventHandler(this.buttonSendCommand_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(25, 206);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 17);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Return:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(26, 60);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(116, 17);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "Send command:";
+            // 
+            // textBoxCommand
+            // 
+            this.textBoxCommand.BackColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxCommand.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCommand.ForeColor = System.Drawing.Color.White;
+            this.textBoxCommand.Location = new System.Drawing.Point(25, 81);
+            this.textBoxCommand.Multiline = true;
+            this.textBoxCommand.Name = "textBoxCommand";
+            this.textBoxCommand.Size = new System.Drawing.Size(162, 35);
+            this.textBoxCommand.TabIndex = 2;
+            this.textBoxCommand.Enter += new System.EventHandler(this.textBoxCommand_Enter);
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(20, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(185, 44);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Configuration";
+            // 
+            // buttonConfirmConfig
+            // 
+            this.buttonConfirmConfig.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConfirmConfig.ForeColor = System.Drawing.Color.Black;
+            this.buttonConfirmConfig.Location = new System.Drawing.Point(627, 311);
+            this.buttonConfirmConfig.Name = "buttonConfirmConfig";
+            this.buttonConfirmConfig.Size = new System.Drawing.Size(121, 23);
+            this.buttonConfirmConfig.TabIndex = 35;
+            this.buttonConfirmConfig.Text = "Confirm";
+            this.buttonConfirmConfig.UseVisualStyleBackColor = true;
+            this.buttonConfirmConfig.Click += new System.EventHandler(this.buttonConfirmConfig_Click);
+            // 
+            // pictureBoxConnected
+            // 
+            this.pictureBoxConnected.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConnected.Image")));
+            this.pictureBoxConnected.Location = new System.Drawing.Point(1037, 94);
+            this.pictureBoxConnected.Name = "pictureBoxConnected";
+            this.pictureBoxConnected.Size = new System.Drawing.Size(64, 67);
+            this.pictureBoxConnected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxConnected.TabIndex = 8;
+            this.pictureBoxConnected.TabStop = false;
+            // 
+            // pictureBoxNotConnected
+            // 
+            this.pictureBoxNotConnected.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNotConnected.Image")));
+            this.pictureBoxNotConnected.Location = new System.Drawing.Point(1037, 94);
+            this.pictureBoxNotConnected.Name = "pictureBoxNotConnected";
+            this.pictureBoxNotConnected.Size = new System.Drawing.Size(64, 67);
+            this.pictureBoxNotConnected.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNotConnected.TabIndex = 9;
+            this.pictureBoxNotConnected.TabStop = false;
+            // 
+            // textBoxReceive
+            // 
+            this.textBoxReceive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.textBoxReceive.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxReceive.ForeColor = System.Drawing.Color.White;
+            this.textBoxReceive.Location = new System.Drawing.Point(848, 173);
+            this.textBoxReceive.Multiline = true;
+            this.textBoxReceive.Name = "textBoxReceive";
+            this.textBoxReceive.Size = new System.Drawing.Size(253, 54);
+            this.textBoxReceive.TabIndex = 10;
+            // 
+            // comboBoxRDC
+            // 
+            this.comboBoxRDC.FormattingEnabled = true;
+            this.comboBoxRDC.Location = new System.Drawing.Point(7, 73);
+            this.comboBoxRDC.Name = "comboBoxRDC";
+            this.comboBoxRDC.Size = new System.Drawing.Size(121, 29);
+            this.comboBoxRDC.TabIndex = 11;
+            this.comboBoxRDC.SelectedIndexChanged += new System.EventHandler(this.comboBoxRDC_SelectedIndexChanged);
+            // 
+            // labelRDC
+            // 
+            this.labelRDC.AutoSize = true;
+            this.labelRDC.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.labelRDC.ForeColor = System.Drawing.Color.Silver;
+            this.labelRDC.Location = new System.Drawing.Point(9, 49);
+            this.labelRDC.Name = "labelRDC";
+            this.labelRDC.Size = new System.Drawing.Size(95, 19);
+            this.labelRDC.TabIndex = 12;
+            this.labelRDC.Text = "Choose RDC";
+            // 
+            // textBoxDeviceName
+            // 
+            this.textBoxDeviceName.Location = new System.Drawing.Point(156, 75);
+            this.textBoxDeviceName.Name = "textBoxDeviceName";
+            this.textBoxDeviceName.Size = new System.Drawing.Size(131, 27);
+            this.textBoxDeviceName.TabIndex = 13;
+            // 
+            // labelRDCNAME
+            // 
+            this.labelRDCNAME.AutoSize = true;
+            this.labelRDCNAME.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.labelRDCNAME.ForeColor = System.Drawing.Color.Silver;
+            this.labelRDCNAME.Location = new System.Drawing.Point(153, 49);
+            this.labelRDCNAME.Name = "labelRDCNAME";
+            this.labelRDCNAME.Size = new System.Drawing.Size(103, 19);
+            this.labelRDCNAME.TabIndex = 14;
+            this.labelRDCNAME.Text = "Device Name";
+            // 
+            // comboBoxDAU_Info
+            // 
+            this.comboBoxDAU_Info.FormattingEnabled = true;
+            this.comboBoxDAU_Info.Location = new System.Drawing.Point(15, 81);
+            this.comboBoxDAU_Info.Name = "comboBoxDAU_Info";
+            this.comboBoxDAU_Info.Size = new System.Drawing.Size(121, 29);
+            this.comboBoxDAU_Info.TabIndex = 15;
+            this.comboBoxDAU_Info.SelectedIndexChanged += new System.EventHandler(this.comboBoxDAU_Info_SelectedIndexChanged);
+            // 
+            // labelDAU
+            // 
+            this.labelDAU.AutoSize = true;
+            this.labelDAU.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.labelDAU.ForeColor = System.Drawing.Color.Silver;
+            this.labelDAU.Location = new System.Drawing.Point(11, 57);
+            this.labelDAU.Name = "labelDAU";
+            this.labelDAU.Size = new System.Drawing.Size(37, 19);
+            this.labelDAU.TabIndex = 16;
+            this.labelDAU.Text = "DAU";
+            // 
+            // textBoxDAU_Description
+            // 
+            this.textBoxDAU_Description.Location = new System.Drawing.Point(16, 143);
+            this.textBoxDAU_Description.Name = "textBoxDAU_Description";
+            this.textBoxDAU_Description.Size = new System.Drawing.Size(121, 27);
+            this.textBoxDAU_Description.TabIndex = 17;
+            this.textBoxDAU_Description.TextChanged += new System.EventHandler(this.textBoxDAU_Description_TextChanged);
+            // 
+            // textBoxDAU_Comport
+            // 
+            this.textBoxDAU_Comport.Location = new System.Drawing.Point(161, 81);
+            this.textBoxDAU_Comport.Name = "textBoxDAU_Comport";
+            this.textBoxDAU_Comport.Size = new System.Drawing.Size(122, 27);
+            this.textBoxDAU_Comport.TabIndex = 18;
+            // 
+            // textBoxDAU_Baudrate
+            // 
+            this.textBoxDAU_Baudrate.Location = new System.Drawing.Point(161, 143);
+            this.textBoxDAU_Baudrate.Name = "textBoxDAU_Baudrate";
+            this.textBoxDAU_Baudrate.Size = new System.Drawing.Size(122, 27);
+            this.textBoxDAU_Baudrate.TabIndex = 19;
+            // 
+            // labelDAU_Description
+            // 
+            this.labelDAU_Description.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.labelDAU_Description.ForeColor = System.Drawing.Color.Silver;
+            this.labelDAU_Description.Location = new System.Drawing.Point(11, 119);
+            this.labelDAU_Description.Name = "labelDAU_Description";
+            this.labelDAU_Description.Size = new System.Drawing.Size(123, 21);
+            this.labelDAU_Description.TabIndex = 0;
+            this.labelDAU_Description.Text = "Device Name";
+            // 
+            // panelOppkobling
+            // 
+            this.panelOppkobling.Controls.Add(this.label32);
+            this.panelOppkobling.Controls.Add(this.textBoxReadToDB);
+            this.panelOppkobling.Controls.Add(this.label31);
+            this.panelOppkobling.Controls.Add(this.textBoxReturn1);
+            this.panelOppkobling.Controls.Add(this.label30);
+            this.panelOppkobling.Controls.Add(this.label29);
+            this.panelOppkobling.Controls.Add(this.buttonSendToDB);
+            this.panelOppkobling.Controls.Add(this.buttonReadOnce);
+            this.panelOppkobling.Controls.Add(this.label28);
+            this.panelOppkobling.Controls.Add(this.buttonTransferDAU);
+            this.panelOppkobling.Controls.Add(this.buttonConfirmConfig);
+            this.panelOppkobling.Controls.Add(this.panel3);
+            this.panelOppkobling.Controls.Add(this.panel1);
+            this.panelOppkobling.Controls.Add(this.panelDAU);
+            this.panelOppkobling.Controls.Add(this.textBoxReceive);
+            this.panelOppkobling.Controls.Add(this.pictureBoxNotConnected);
+            this.panelOppkobling.Controls.Add(this.pictureBoxConnected);
+            this.panelOppkobling.Controls.Add(this.panelKonfigurasjon);
+            this.panelOppkobling.Controls.Add(this.label6);
+            this.panelOppkobling.Controls.Add(this.label5);
+            this.panelOppkobling.Controls.Add(this.label2);
+            this.panelOppkobling.Controls.Add(this.buttonDisconnect);
+            this.panelOppkobling.Controls.Add(this.buttonConnect);
+            this.panelOppkobling.Controls.Add(this.comboBoxBaud);
+            this.panelOppkobling.Controls.Add(this.comboBoxPorts);
+            this.panelOppkobling.Location = new System.Drawing.Point(203, 0);
+            this.panelOppkobling.Name = "panelOppkobling";
+            this.panelOppkobling.Size = new System.Drawing.Size(1741, 874);
+            this.panelOppkobling.TabIndex = 2;
+            this.panelOppkobling.Paint += new System.Windows.Forms.PaintEventHandler(this.panelOppkobling_Paint);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label32.ForeColor = System.Drawing.Color.White;
+            this.label32.Location = new System.Drawing.Point(355, 447);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(211, 19);
+            this.label32.TabIndex = 39;
+            this.label32.Text = "Value from current instrument";
+            // 
+            // textBoxReadToDB
+            // 
+            this.textBoxReadToDB.Location = new System.Drawing.Point(627, 441);
+            this.textBoxReadToDB.Name = "textBoxReadToDB";
+            this.textBoxReadToDB.Size = new System.Drawing.Size(121, 27);
+            this.textBoxReadToDB.TabIndex = 38;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label31.ForeColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(355, 311);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(233, 19);
+            this.label31.TabIndex = 37;
+            this.label31.Text = "Choose instrument-configuration";
+            // 
+            // textBoxReturn1
+            // 
+            this.textBoxReturn1.Location = new System.Drawing.Point(352, 335);
+            this.textBoxReturn1.Multiline = true;
+            this.textBoxReturn1.Name = "textBoxReturn1";
+            this.textBoxReturn1.Size = new System.Drawing.Size(396, 51);
+            this.textBoxReturn1.TabIndex = 36;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(355, 510);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(178, 19);
+            this.label30.TabIndex = 30;
+            this.label30.Text = "Send value to Database";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(355, 397);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(156, 19);
+            this.label29.TabIndex = 29;
+            this.label29.Text = "Read from instrument";
+            // 
+            // buttonSendToDB
+            // 
+            this.buttonSendToDB.ForeColor = System.Drawing.Color.Black;
+            this.buttonSendToDB.Location = new System.Drawing.Point(627, 501);
+            this.buttonSendToDB.Name = "buttonSendToDB";
+            this.buttonSendToDB.Size = new System.Drawing.Size(121, 30);
+            this.buttonSendToDB.TabIndex = 28;
+            this.buttonSendToDB.Text = "Send";
+            this.buttonSendToDB.UseVisualStyleBackColor = true;
+            this.buttonSendToDB.Click += new System.EventHandler(this.buttonSendToDB_Click);
+            // 
+            // buttonReadOnce
+            // 
+            this.buttonReadOnce.ForeColor = System.Drawing.Color.Black;
+            this.buttonReadOnce.Location = new System.Drawing.Point(627, 388);
+            this.buttonReadOnce.Name = "buttonReadOnce";
+            this.buttonReadOnce.Size = new System.Drawing.Size(121, 30);
+            this.buttonReadOnce.TabIndex = 27;
+            this.buttonReadOnce.Text = "Read Once";
+            this.buttonReadOnce.UseVisualStyleBackColor = true;
+            this.buttonReadOnce.Click += new System.EventHandler(this.buttonReadOnce_Click);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.Silver;
+            this.label28.Location = new System.Drawing.Point(697, 85);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(62, 42);
+            this.label28.TabIndex = 26;
+            this.label28.Text = "Send \r\nConfig";
+            // 
+            // buttonTransferDAU
+            // 
+            this.buttonTransferDAU.Image = ((System.Drawing.Image)(resources.GetObject("buttonTransferDAU.Image")));
+            this.buttonTransferDAU.Location = new System.Drawing.Point(701, 130);
+            this.buttonTransferDAU.Name = "buttonTransferDAU";
+            this.buttonTransferDAU.Size = new System.Drawing.Size(58, 44);
+            this.buttonTransferDAU.TabIndex = 25;
+            this.buttonTransferDAU.UseVisualStyleBackColor = true;
+            this.buttonTransferDAU.Click += new System.EventHandler(this.buttonTransferDAU_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label35);
+            this.panel3.Controls.Add(this.label27);
+            this.panel3.Controls.Add(this.label26);
+            this.panel3.Controls.Add(this.label25);
+            this.panel3.Controls.Add(this.label24);
+            this.panel3.Controls.Add(this.label23);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.labelLRV);
+            this.panel3.Controls.Add(this.textBoxIN_SCANFREQ);
+            this.panel3.Controls.Add(this.textBoxIN_IOTYPE);
+            this.panel3.Controls.Add(this.textBoxIN_TAGNAME);
+            this.panel3.Controls.Add(this.textBoxIN_AHIGH);
+            this.panel3.Controls.Add(this.textBoxIN_URV);
+            this.panel3.Controls.Add(this.textBoxIN_ALOW);
+            this.panel3.Controls.Add(this.textBoxIN_LRV);
+            this.panel3.Controls.Add(this.labelTAG_ID);
+            this.panel3.Controls.Add(this.comboBoxTAG_ID);
+            this.panel3.Location = new System.Drawing.Point(23, 233);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(312, 321);
+            this.panel3.TabIndex = 24;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label27.ForeColor = System.Drawing.Color.Silver;
+            this.label27.Location = new System.Drawing.Point(165, 81);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(80, 19);
+            this.label27.TabIndex = 17;
+            this.label27.Text = "Instrument";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label26.ForeColor = System.Drawing.Color.Silver;
+            this.label26.Location = new System.Drawing.Point(162, 266);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(122, 19);
+            this.label26.TabIndex = 16;
+            this.label26.Text = "Scan Frequency";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label25.ForeColor = System.Drawing.Color.Silver;
+            this.label25.Location = new System.Drawing.Point(17, 266);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(90, 19);
+            this.label25.TabIndex = 15;
+            this.label25.Text = "IN/OUT Type";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label24.ForeColor = System.Drawing.Color.Silver;
+            this.label24.Location = new System.Drawing.Point(162, 202);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(83, 19);
+            this.label24.TabIndex = 14;
+            this.label24.Text = "Alarm High";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label23.ForeColor = System.Drawing.Color.Silver;
+            this.label23.Location = new System.Drawing.Point(17, 202);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(79, 19);
+            this.label23.TabIndex = 13;
+            this.label23.Text = "Alarm Low";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label9.ForeColor = System.Drawing.Color.Silver;
+            this.label9.Location = new System.Drawing.Point(162, 141);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(36, 19);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "URV";
+            // 
+            // labelLRV
+            // 
+            this.labelLRV.AutoSize = true;
+            this.labelLRV.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.labelLRV.ForeColor = System.Drawing.Color.Silver;
+            this.labelLRV.Location = new System.Drawing.Point(17, 141);
+            this.labelLRV.Name = "labelLRV";
+            this.labelLRV.Size = new System.Drawing.Size(33, 19);
+            this.labelLRV.TabIndex = 11;
+            this.labelLRV.Text = "LRV";
+            // 
+            // textBoxIN_SCANFREQ
+            // 
+            this.textBoxIN_SCANFREQ.Location = new System.Drawing.Point(165, 288);
+            this.textBoxIN_SCANFREQ.Name = "textBoxIN_SCANFREQ";
+            this.textBoxIN_SCANFREQ.Size = new System.Drawing.Size(124, 27);
+            this.textBoxIN_SCANFREQ.TabIndex = 9;
+            // 
+            // textBoxIN_IOTYPE
+            // 
+            this.textBoxIN_IOTYPE.Location = new System.Drawing.Point(21, 288);
+            this.textBoxIN_IOTYPE.Name = "textBoxIN_IOTYPE";
+            this.textBoxIN_IOTYPE.Size = new System.Drawing.Size(121, 27);
+            this.textBoxIN_IOTYPE.TabIndex = 8;
+            // 
+            // textBoxIN_TAGNAME
+            // 
+            this.textBoxIN_TAGNAME.Location = new System.Drawing.Point(165, 103);
+            this.textBoxIN_TAGNAME.Name = "textBoxIN_TAGNAME";
+            this.textBoxIN_TAGNAME.Size = new System.Drawing.Size(124, 27);
+            this.textBoxIN_TAGNAME.TabIndex = 6;
+            // 
+            // textBoxIN_AHIGH
+            // 
+            this.textBoxIN_AHIGH.Location = new System.Drawing.Point(165, 227);
+            this.textBoxIN_AHIGH.Name = "textBoxIN_AHIGH";
+            this.textBoxIN_AHIGH.Size = new System.Drawing.Size(122, 27);
+            this.textBoxIN_AHIGH.TabIndex = 5;
+            // 
+            // textBoxIN_URV
+            // 
+            this.textBoxIN_URV.Location = new System.Drawing.Point(166, 165);
+            this.textBoxIN_URV.Name = "textBoxIN_URV";
+            this.textBoxIN_URV.Size = new System.Drawing.Size(123, 27);
+            this.textBoxIN_URV.TabIndex = 4;
+            // 
+            // textBoxIN_ALOW
+            // 
+            this.textBoxIN_ALOW.Location = new System.Drawing.Point(18, 224);
+            this.textBoxIN_ALOW.Name = "textBoxIN_ALOW";
+            this.textBoxIN_ALOW.Size = new System.Drawing.Size(124, 27);
+            this.textBoxIN_ALOW.TabIndex = 3;
+            // 
+            // textBoxIN_LRV
+            // 
+            this.textBoxIN_LRV.Location = new System.Drawing.Point(21, 165);
+            this.textBoxIN_LRV.Name = "textBoxIN_LRV";
+            this.textBoxIN_LRV.Size = new System.Drawing.Size(121, 27);
+            this.textBoxIN_LRV.TabIndex = 2;
+            // 
+            // labelTAG_ID
+            // 
+            this.labelTAG_ID.AutoSize = true;
+            this.labelTAG_ID.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.labelTAG_ID.ForeColor = System.Drawing.Color.Silver;
+            this.labelTAG_ID.Location = new System.Drawing.Point(14, 77);
+            this.labelTAG_ID.Name = "labelTAG_ID";
+            this.labelTAG_ID.Size = new System.Drawing.Size(52, 19);
+            this.labelTAG_ID.TabIndex = 1;
+            this.labelTAG_ID.Text = "TAG ID";
+            // 
+            // comboBoxTAG_ID
+            // 
+            this.comboBoxTAG_ID.FormattingEnabled = true;
+            this.comboBoxTAG_ID.Location = new System.Drawing.Point(20, 101);
+            this.comboBoxTAG_ID.Name = "comboBoxTAG_ID";
+            this.comboBoxTAG_ID.Size = new System.Drawing.Size(121, 29);
+            this.comboBoxTAG_ID.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label33);
+            this.panel1.Controls.Add(this.comboBoxRDC);
+            this.panel1.Controls.Add(this.labelRDC);
+            this.panel1.Controls.Add(this.labelRDCNAME);
+            this.panel1.Controls.Add(this.textBoxDeviceName);
+            this.panel1.Location = new System.Drawing.Point(23, 53);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(312, 174);
+            this.panel1.TabIndex = 23;
+            // 
+            // panelDAU
+            // 
+            this.panelDAU.Controls.Add(this.label34);
+            this.panelDAU.Controls.Add(this.textBoxDAU_Comport);
+            this.panelDAU.Controls.Add(this.labelDAU_Baudrate);
+            this.panelDAU.Controls.Add(this.comboBoxDAU_Info);
+            this.panelDAU.Controls.Add(this.labelDAU_Comport);
+            this.panelDAU.Controls.Add(this.labelDAU);
+            this.panelDAU.Controls.Add(this.labelDAU_Description);
+            this.panelDAU.Controls.Add(this.textBoxDAU_Description);
+            this.panelDAU.Controls.Add(this.textBoxDAU_Baudrate);
+            this.panelDAU.Location = new System.Drawing.Point(379, 45);
+            this.panelDAU.Name = "panelDAU";
+            this.panelDAU.Size = new System.Drawing.Size(312, 182);
+            this.panelDAU.TabIndex = 22;
+            // 
+            // labelDAU_Baudrate
+            // 
+            this.labelDAU_Baudrate.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.labelDAU_Baudrate.ForeColor = System.Drawing.Color.Silver;
+            this.labelDAU_Baudrate.Location = new System.Drawing.Point(157, 119);
+            this.labelDAU_Baudrate.Name = "labelDAU_Baudrate";
+            this.labelDAU_Baudrate.Size = new System.Drawing.Size(119, 21);
+            this.labelDAU_Baudrate.TabIndex = 21;
+            this.labelDAU_Baudrate.Text = "BAUD rate";
+            // 
+            // labelDAU_Comport
+            // 
+            this.labelDAU_Comport.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.labelDAU_Comport.ForeColor = System.Drawing.Color.Silver;
+            this.labelDAU_Comport.Location = new System.Drawing.Point(157, 57);
+            this.labelDAU_Comport.Name = "labelDAU_Comport";
+            this.labelDAU_Comport.Size = new System.Drawing.Size(108, 21);
+            this.labelDAU_Comport.TabIndex = 20;
+            this.labelDAU_Comport.Text = "COM Port";
+            this.labelDAU_Comport.Click += new System.EventHandler(this.labelDAU_Comport_Click);
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.ForeColor = System.Drawing.Color.White;
+            this.label33.Location = new System.Drawing.Point(9, 12);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(192, 21);
+            this.label33.TabIndex = 15;
+            this.label33.Text = "Remote Data Collector";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.ForeColor = System.Drawing.Color.White;
+            this.label34.Location = new System.Drawing.Point(11, 9);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(176, 21);
+            this.label34.TabIndex = 16;
+            this.label34.Text = "Data Acquisition Unit";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.ForeColor = System.Drawing.Color.White;
+            this.label35.Location = new System.Drawing.Point(14, 25);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(95, 21);
+            this.label35.TabIndex = 16;
+            this.label35.Text = "Instrument";
+            // 
+            // FormMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1111, 582);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.labelFail);
             this.Controls.Add(this.labelAlarml);
             this.Controls.Add(this.labelAlarmh);
-            this.Controls.Add(this.panelKonfigurasjon);
             this.Controls.Add(this.labelStatusOk);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.textBoxStatus);
@@ -1212,9 +1715,9 @@ namespace FirstGUI
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "SoftSenseConf";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelDockLeft.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1224,16 +1727,22 @@ namespace FirstGUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartVbaRaw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartVba)).EndInit();
-            this.panelOppkobling.ResumeLayout(false);
-            this.panelOppkobling.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNotConnected)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConnected)).EndInit();
             this.panelKonfigurasjon.ResumeLayout(false);
             this.panelKonfigurasjon.PerformLayout();
             this.panelPassword.ResumeLayout(false);
             this.panelPassword.PerformLayout();
             this.panelNewSettings.ResumeLayout(false);
             this.panelNewSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConnected)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNotConnected)).EndInit();
+            this.panelOppkobling.ResumeLayout(false);
+            this.panelOppkobling.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panelDAU.ResumeLayout(false);
+            this.panelDAU.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1249,48 +1758,11 @@ namespace FirstGUI
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelLeft;
-        private System.Windows.Forms.Panel panelOppkobling;
-        private System.Windows.Forms.Button buttonDisconnect;
-        private System.Windows.Forms.Button buttonConnect;
-        private System.Windows.Forms.ComboBox comboBoxBaud;
-        private System.Windows.Forms.ComboBox comboBoxPorts;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelLiveData;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panelKonfigurasjon;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.PictureBox pictureBoxNotConnected;
-        private System.Windows.Forms.PictureBox pictureBoxConnected;
-        private System.Windows.Forms.TextBox textBoxReceive;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartVba;
         private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBoxCommand;
-        private System.Windows.Forms.Button buttonSaveConfig;
-        private System.Windows.Forms.Button buttonReadConfig;
-        private System.Windows.Forms.Button buttonSendCommand;
-        private System.Windows.Forms.TextBox textBoxReturn;
-        private System.Windows.Forms.Panel panelNewSettings;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button buttonConfirmConfig;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBoxNewLrv;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBoxNewLowAlarm;
-        private System.Windows.Forms.TextBox textBoxNewHighAlarm;
-        private System.Windows.Forms.TextBox textBoxNewUrv;
-        private System.Windows.Forms.TextBox textBoxNewName;
-        private System.Windows.Forms.Panel panelPassword;
-        private System.Windows.Forms.Button buttonConfirmPassword;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelconnected;
         private System.Windows.Forms.Label labelOffline;
         private System.Windows.Forms.Label label19;
@@ -1304,8 +1776,6 @@ namespace FirstGUI
         private System.Windows.Forms.CheckBox checkBoxScaled;
         private System.Windows.Forms.Button buttonStopLoad;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button buttonReadCurrent;
         private System.Windows.Forms.Timer timerStatus;
         private System.Windows.Forms.TextBox textBoxStatus;
         private System.Windows.Forms.Timer timerClock;
@@ -1331,8 +1801,91 @@ namespace FirstGUI
         private System.Windows.Forms.Button buttonDataSave;
         private System.Windows.Forms.SaveFileDialog saveFileDialogRawData;
         private System.Windows.Forms.Button buttonDataSaveScaled;
+        private System.Windows.Forms.ComboBox comboBoxPorts;
+        private System.Windows.Forms.ComboBox comboBoxBaud;
+        private System.Windows.Forms.Button buttonConnect;
+        private System.Windows.Forms.Button buttonDisconnect;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panelKonfigurasjon;
+        private System.Windows.Forms.Panel panelPassword;
+        private System.Windows.Forms.Button buttonConfirmPassword;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.Panel panelNewSettings;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button buttonReadCurrent;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button buttonSaveConfig;
+        private System.Windows.Forms.Button buttonConfirmConfig;
+        private System.Windows.Forms.Button buttonReadConfig;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxNewLrv;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxNewLowAlarm;
+        private System.Windows.Forms.TextBox textBoxNewHighAlarm;
+        private System.Windows.Forms.TextBox textBoxNewUrv;
+        private System.Windows.Forms.TextBox textBoxNewName;
+        private System.Windows.Forms.TextBox textBoxReturn;
+        private System.Windows.Forms.Button buttonSendCommand;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxCommand;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBoxConnected;
+        private System.Windows.Forms.PictureBox pictureBoxNotConnected;
+        private System.Windows.Forms.TextBox textBoxReceive;
+        private System.Windows.Forms.ComboBox comboBoxRDC;
+        private System.Windows.Forms.Label labelRDC;
+        private System.Windows.Forms.TextBox textBoxDeviceName;
+        private System.Windows.Forms.Label labelRDCNAME;
+        private System.Windows.Forms.ComboBox comboBoxDAU_Info;
+        private System.Windows.Forms.Label labelDAU;
+        private System.Windows.Forms.TextBox textBoxDAU_Description;
+        private System.Windows.Forms.TextBox textBoxDAU_Comport;
+        private System.Windows.Forms.TextBox textBoxDAU_Baudrate;
+        private System.Windows.Forms.Label labelDAU_Description;
+        private System.Windows.Forms.Panel panelOppkobling;
+        private System.Windows.Forms.Label labelDAU_Baudrate;
+        private System.Windows.Forms.Label labelDAU_Comport;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelDAU;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelLRV;
+        private System.Windows.Forms.TextBox textBoxIN_SCANFREQ;
+        private System.Windows.Forms.TextBox textBoxIN_IOTYPE;
+        private System.Windows.Forms.TextBox textBoxIN_TAGNAME;
+        private System.Windows.Forms.TextBox textBoxIN_AHIGH;
+        private System.Windows.Forms.TextBox textBoxIN_URV;
+        private System.Windows.Forms.TextBox textBoxIN_ALOW;
+        private System.Windows.Forms.TextBox textBoxIN_LRV;
+        private System.Windows.Forms.Label labelTAG_ID;
+        private System.Windows.Forms.ComboBox comboBoxTAG_ID;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button buttonTransferDAU;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Button buttonSendToDB;
+        private System.Windows.Forms.Button buttonReadOnce;
+        private System.Windows.Forms.TextBox textBoxReturn1;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox textBoxReadToDB;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
     }
 }
 

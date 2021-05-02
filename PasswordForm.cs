@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FirstGUI
+namespace Arbeidskrav04
 {
     public partial class PasswordForm : Form
     {

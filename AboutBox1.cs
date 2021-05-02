@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FirstGUI
+namespace Arbeidskrav04
 {
     partial class AboutBoxSoft : Form
     {

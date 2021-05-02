@@ -10,18 +10,20 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.IO;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Data.SqlClient;
+using System.Configuration;
 
 
-namespace FirstGUI
+namespace Arbeidskrav04
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
         }
+        string connectSSDB = ConfigurationManager.ConnectionStrings["SoftSensDBConnectionString"].ConnectionString;
 
-        
         string receivedConfig = ""; 
         string[] instrumentConfigs;
         string[] readconfiguration = new string[5];
@@ -44,6 +46,8 @@ namespace FirstGUI
 
         private void buttonOppkobling_Click(object sender, EventArgs e)
         {
+            
+
             panelLeft.Height = buttonOppkobling.Height;
             panelLeft.Top = buttonOppkobling.Top;
             panelOppkobling.Visible = true;
@@ -79,6 +83,33 @@ namespace FirstGUI
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            SqlConnection connect = new SqlConnection(connectSSDB);
+            SqlCommand sc;
+            SqlDataReader rd;
+
+            string sqlRDC = "SELECT * FROM RDC";
+
+            try
+            {
+                connect.Open();
+                sc = new SqlCommand(sqlRDC, connect);
+                rd = sc.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    comboBoxRDC.Items.Add(rd.GetValue(0).ToString());
+
+                }
+                sc.Dispose();
+                connect.Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+
             buttonOppkobling.Enabled = true;
             panelOppkobling.Visible = true;
             panelKonfigurasjon.Visible = false;
@@ -108,12 +139,15 @@ namespace FirstGUI
 
         private void buttonConnect_Click(object sender, EventArgs e)
         {
-            if (comboBoxPorts.SelectedIndex > -1)
+            if (comboBoxPorts.Text.Length > -1)
             {
-                serialPort1.PortName = comboBoxPorts.Items[comboBoxPorts.SelectedIndex].ToString();
-                if (comboBoxBaud.SelectedIndex > -1)
+                //serialPort1.PortName = comboBoxPorts.Items[comboBoxPorts.SelectedIndex].ToString();
+
+                serialPort1.PortName = "COM" + comboBoxPorts.Text;
+                if (comboBoxBaud.Text.Length > -1)
                 {
-                    serialPort1.BaudRate = Convert.ToInt32(comboBoxBaud.Items[comboBoxBaud.SelectedIndex]);
+                    //serialPort1.BaudRate = Convert.ToInt32(comboBoxBaud.Items[comboBoxBaud.SelectedIndex]);
+                    serialPort1.BaudRate = Convert.ToInt32(comboBoxBaud.Text);
                     serialPort1.Open();
                     pictureBoxConnected.Visible = true;
                     pictureBoxNotConnected.Visible = false;
@@ -286,58 +320,60 @@ namespace FirstGUI
 
         private void buttonConfirmPassword_Click(object sender, EventArgs e)
         {
-            double newdata;
             
-            if (textBoxPassword.Text.Length==8)
-            {
-                string writestring;
-                string password = textBoxPassword.Text;
-
-                DialogResult dialog = MessageBox.Show("Are you sure you want to set new data variables?", "", MessageBoxButtons.YesNo);
-                if (dialog == DialogResult.Yes)
-                {
-                    //Combine Data from textboxes (ConfigToSend)
-                    #region
-                    string configToSend = textBoxNewName.Text + ";" + textBoxNewLrv.Text + ";" 
-                                          + textBoxNewUrv.Text + ";" + textBoxNewLowAlarm.Text + ";" + textBoxNewHighAlarm.Text;
-                    #endregion
-
-                    writestring = ("writeconf>" + password + ">" + string.Join(";", configToSend));
-                    textBoxReturn.Clear();
-
-                    serialPort1.WriteLine(writestring);
-                    System.Threading.Thread.Sleep(1300);
-                    newdata = Convert.ToDouble(serialPort1.ReadExisting());
-                    if (newdata ==1)
-                    {
-                        serialPort1.WriteLine(writestring);
-                        System.Threading.Thread.Sleep(1300);
-                        textBoxReturn.AppendText("New configuration has been successfully set:\r\n");
-                        textBoxReturn.AppendText(serialPort1.ReadExisting());
-                    }
-                    else if (newdata ==0)
-                    {
-                        textBoxReturn.AppendText("Something went wrong, try again");
-                    }
-                    
-                    //textBoxReturn.AppendText(serialPort1.ReadExisting());
-                    //timerSerialReceive.Enabled = true;
-                    //timerChartAdd.Enabled = false;
-
-
-                }
-                else if (dialog == DialogResult.No)
-                {
-
-                }
 
 
 
-            }
-            else
-            {
-                MessageBox.Show("Password must consist of 8 characters! Please try again.");
-            }
+            //if (textBoxPassword.Text.Length==8)
+            //{
+            //    string writestring;
+            //    string password = textBoxPassword.Text;
+
+            //    DialogResult dialog = MessageBox.Show("Are you sure you want to set new data variables?", "", MessageBoxButtons.YesNo);
+            //    if (dialog == DialogResult.Yes)
+            //    {
+            //        //Combine Data from textboxes (ConfigToSend)
+            //        #region
+            //        string configToSend = textBoxIN_TAGNAME.Text + ";" + textBoxIN_LRV.Text + ";" 
+            //                              + textBoxIN_URV.Text + ";" + textBoxIN_ALOW.Text + ";" + textBoxIN_AHIGH.Text;
+            //        #endregion
+
+            //        writestring = ("writeconf>" + password + ">" + string.Join(";", configToSend));
+            //        textBoxReturn1.Clear();
+
+            //        serialPort1.WriteLine(writestring);
+            //        System.Threading.Thread.Sleep(1300);
+            //        newdata = Convert.ToDouble(serialPort1.ReadExisting());
+            //        if (newdata ==1)
+            //        {
+            //            serialPort1.WriteLine(writestring);
+            //            System.Threading.Thread.Sleep(1300);
+            //            textBoxReturn1.AppendText("New configuration has been successfully set:\r\n");
+            //            textBoxReturn1.AppendText(serialPort1.ReadExisting());
+            //        }
+            //        else if (newdata ==0)
+            //        {
+            //            textBoxReturn1.AppendText("Something went wrong, try again");
+            //        }
+
+            //        //textBoxReturn.AppendText(serialPort1.ReadExisting());
+            //        //timerSerialReceive.Enabled = true;
+            //        //timerChartAdd.Enabled = false;
+
+
+            //    }
+            //    else if (dialog == DialogResult.No)
+            //    {
+
+            //    }
+
+
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Password must consist of 8 characters! Please try again.");
+            //}
         }
 
         private void textBoxNewLrv_KeyPress(object sender, KeyPressEventArgs e)
@@ -426,30 +462,71 @@ namespace FirstGUI
         private void buttonConfirmConfig_Click(object sender, EventArgs e)
         {
             countconfigifs = 0;
-            if (Convert.ToDouble(textBoxNewLrv.Text) >500)
+            if (Convert.ToDouble(textBoxIN_LRV.Text) >500)
             {
                 MessageBox.Show("LRV-value must me between 0-500");
                 countconfigifs -= 1;
             }
-            if (Convert.ToDouble(textBoxNewUrv.Text) > 500)
+            if (Convert.ToDouble(textBoxIN_URV.Text) > 500)
             {
                 MessageBox.Show("URV-value must be between 0-500");
                 countconfigifs -= 1;
             }
-            if (Convert.ToDouble(textBoxNewHighAlarm.Text) > 500)
+            if (Convert.ToDouble(textBoxIN_AHIGH.Text) > 500)
             {
                 MessageBox.Show("HIGH ALARM-value must be between 0-500");
                 countconfigifs -= 1;
             }
-            if (Convert.ToDouble(textBoxNewLowAlarm.Text) > 500)
+            if (Convert.ToDouble(textBoxIN_ALOW.Text) > 500)
             {
                 MessageBox.Show("LOW ALARM-value must be between 0-500");
                 countconfigifs -= 1;
             }
             if (countconfigifs==0)
             {
-                MessageBox.Show("Please write password to continue");
-                panelPassword.Visible = true;
+                double newdata;
+
+                string writestring;
+                string password = "password";
+
+                DialogResult dialog = MessageBox.Show("Are you sure you want to set new data variables?", "", MessageBoxButtons.YesNo);
+                if (dialog == DialogResult.Yes)
+                {
+                    //Combine Data from textboxes (ConfigToSend)
+                    #region
+                    string configToSend = textBoxIN_TAGNAME.Text + ";" + textBoxIN_LRV.Text + ";"
+                                          + textBoxIN_URV.Text + ";" + textBoxIN_ALOW.Text + ";" + textBoxIN_AHIGH.Text;
+                    #endregion
+
+                    writestring = ("writeconf>" + password + ">" + string.Join(";", configToSend));
+                    textBoxReturn1.Clear();
+
+                    serialPort1.WriteLine(writestring);
+                    System.Threading.Thread.Sleep(1300);
+                    newdata = Convert.ToDouble(serialPort1.ReadExisting());
+
+                    if (newdata == 1)
+                    {
+                        serialPort1.WriteLine(writestring);
+                        System.Threading.Thread.Sleep(1300);
+                        textBoxReturn1.AppendText("New configuration has been successfully set:\r\n");
+                        textBoxReturn1.AppendText(serialPort1.ReadExisting());
+                    }
+                    else if (newdata == 0)
+                    {
+                        textBoxReturn1.AppendText("Something went wrong, try again");
+                    }
+
+                    //textBoxReturn.AppendText(serialPort1.ReadExisting());
+                    //timerSerialReceive.Enabled = true;
+                    //timerChartAdd.Enabled = false;
+
+
+                }
+                else if (dialog == DialogResult.No)
+                {
+
+                }
             }
             
 
@@ -1111,6 +1188,299 @@ namespace FirstGUI
         {
 
         }
+
+        private void comboBoxRDC_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection connect = new SqlConnection(connectSSDB);
+            SqlCommand sc;
+            SqlDataReader rd;
+
+            connect.Open();
+            SqlCommand cmd = connect.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT * FROM DAU WHERE RDC_ID='" + comboBoxRDC.SelectedItem.ToString() + "'";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            textBoxStatus.Text = da.ToString();
+
+            comboBoxDAU_Info.Items.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                comboBoxDAU_Info.Items.Add(dt.Rows[i]["DAU_ID"].ToString());
+            }
+
+            string rdc_info = ("SELECT Description FROM RDC WHERE RDC_ID='" + comboBoxRDC.SelectedItem.ToString() + "'");
+            sc = new SqlCommand(rdc_info, connect);
+            rd = sc.ExecuteReader();
+
+            while (rd.Read())
+            {
+                textBoxDeviceName.Text = (rd.GetValue(0).ToString());
+                
+            }
+            sc.Dispose();
+            connect.Close();
+
+
+
+
+            //foreach (DataRow dr in dt.Rows)
+            //{
+
+
+            //    comboBoxDAU_Info.Items.Clear();
+            //    comboBoxDAU_Info.Items.Add(dr["DAU_ID"]);
+
+
+            //}
+
+
+
+
+            
+
+            if (comboBoxDAU_Info.SelectedIndex < 0)
+            {
+                comboBoxDAU_Info.SelectedIndex = 0;
+                connect.Open();
+
+                string DAU_Info = ("SELECT * FROM DAU WHERE DAU_ID='" + comboBoxDAU_Info.SelectedItem.ToString() + "'");
+                sc = new SqlCommand(DAU_Info, connect);
+                rd = sc.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    textBoxDAU_Description.Text = (rd.GetValue(4).ToString());
+                    textBoxDAU_Comport.Text = (rd.GetValue(5).ToString());
+                    textBoxDAU_Baudrate.Text = (rd.GetValue(6).ToString());
+                }
+                sc.Dispose();
+                connect.Close();
+            }
+
+
+
+
+
+            //connect.Open();
+
+            //string TAG_ID = ("SELECT * FROM Instrument WHERE DAU_ID='" + comboBoxDAU_Info.SelectedItem.ToString() + "'");
+            //sc = new SqlCommand(TAG_ID, connect);
+            //rd = sc.ExecuteReader();
+
+            //while (rd.Read())
+            //{
+            //    comboBoxTAG_ID.Items.Clear();
+            //    comboBoxTAG_ID.Items.Add(rd["TAG_ID"]);
+            //    comboBoxTAG_ID.SelectedIndex = 0;
+
+            //    textBoxIN_LRV.Text = (rd.GetValue(1).ToString());
+            //    textBoxIN_URV.Text = (rd.GetValue(2).ToString());
+            //    textBoxIN_ALOW.Text = (rd.GetValue(3).ToString());
+            //    textBoxIN_AHIGH.Text = (rd.GetValue(4).ToString());
+            //    textBoxIN_SCANFREQ.Text = (rd.GetValue(9).ToString());
+            //    textBoxIN_IOTYPE.Text = (rd.GetValue(10).ToString());
+            //    textBoxIN_TAGNAME.Text = (rd.GetValue(11).ToString());
+
+
+            //}
+            //sc.Dispose();
+            //connect.Close();
+
+            //if (comboBoxTAG_ID.SelectedIndex < 0)
+            //{
+            //    comboBoxTAG_ID.SelectedIndex = 0;
+            //    connect.Open();
+
+            //    string TAG_ID = ("SELECT * FROM Instrument WHERE DAU_ID='" + comboBoxDAU_Info.SelectedItem.ToString() + "'");
+            //    sc = new SqlCommand(TAG_ID, connect);
+            //    rd = sc.ExecuteReader();
+
+            //    while (rd.Read())
+            //    {
+            //        textBoxIN_TAGNAME.Text = (rd.GetValue(0).ToString());
+
+            //    }
+            //    sc.Dispose();
+            //    connect.Close();
+            //}
+
+
+
+
+
+
+
+        }
+
+        private void textBoxDAU_Description_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelDAU_Comport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelOppkobling_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBoxDAU_Info_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            SqlConnection connect = new SqlConnection(connectSSDB);
+            SqlCommand sc;
+            SqlDataReader rd;
+
+            connect.Open();
+            SqlCommand cmd = connect.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = ("SELECT * FROM Instrument WHERE DAU_ID='" + comboBoxDAU_Info.SelectedItem.ToString() + "'");
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            textBoxStatus.Text = da.ToString();
+
+
+
+            comboBoxTAG_ID.Items.Clear();
+            
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                comboBoxTAG_ID.Items.Add(dt.Rows[i]["TAG_ID"].ToString());
+            }
+
+
+            string DAU_Info = ("SELECT * FROM DAU WHERE DAU_ID='" + comboBoxDAU_Info.SelectedItem.ToString() + "'");
+            sc = new SqlCommand(DAU_Info, connect);
+            rd = sc.ExecuteReader();
+
+            while (rd.Read())
+            {
+                textBoxDAU_Description.Text = (rd.GetValue(4).ToString());
+                textBoxDAU_Comport.Text = (rd.GetValue(5).ToString());
+                textBoxDAU_Baudrate.Text = (rd.GetValue(6).ToString());
+            }
+            connect.Close();
+
+
+
+            if (comboBoxTAG_ID.SelectedIndex < 0)
+            {
+                comboBoxTAG_ID.SelectedIndex = 0;
+                connect.Open();
+
+                string TAG_ID = ("SELECT * FROM Instrument WHERE TAG_ID='" + comboBoxTAG_ID.SelectedItem.ToString() + "'");
+                sc = new SqlCommand(TAG_ID, connect);
+                rd = sc.ExecuteReader();
+
+                while (rd.Read())
+                {
+                    textBoxIN_LRV.Text = (rd.GetValue(1).ToString());
+                    textBoxIN_URV.Text = (rd.GetValue(2).ToString());
+                    textBoxIN_ALOW.Text = (rd.GetValue(3).ToString());
+                    textBoxIN_AHIGH.Text = (rd.GetValue(4).ToString());
+                    textBoxIN_SCANFREQ.Text = (rd.GetValue(9).ToString());
+                    textBoxIN_IOTYPE.Text = (rd.GetValue(10).ToString());
+                    textBoxIN_TAGNAME.Text = (rd.GetValue(11).ToString());
+                }
+                sc.Dispose();
+                connect.Close();
+            }
+
+            //rd = cmd.ExecuteReader();
+
+            
+            //while (rd.Read())
+            //{
+                
+            //    textBoxIN_LRV.Text = (rd.GetValue(1).ToString());
+            //    textBoxIN_URV.Text = (rd.GetValue(2).ToString());
+            //    textBoxIN_ALOW.Text = (rd.GetValue(3).ToString());
+            //    textBoxIN_AHIGH.Text = (rd.GetValue(4).ToString());
+            //    textBoxIN_SCANFREQ.Text = (rd.GetValue(9).ToString());
+            //    textBoxIN_IOTYPE.Text = (rd.GetValue(10).ToString());
+            //    textBoxIN_TAGNAME.Text = (rd.GetValue(11).ToString());
+
+
+            //}
+            //cmd.Dispose();
+            //connect.Close();
+
+        }
+
+        private void buttonTransferDAU_Click(object sender, EventArgs e)
+        {
+            comboBoxPorts.Text = textBoxDAU_Comport.Text;
+            comboBoxBaud.Text = textBoxDAU_Baudrate.Text;
+        }
+
+        private void buttonReadOnce_Click(object sender, EventArgs e)
+        {
+            textBoxReadToDB.Clear();
+            serialPort1.WriteLine("readraw");
+            System.Threading.Thread.Sleep(1300);
+            string receivedstatus = serialPort1.ReadExisting().ToString();
+            textBoxReadToDB.AppendText(receivedstatus);
+
+            
+
+            
+
+            //connection.Close();
+
+
+            //timerSerialReceive.Enabled = true;
+            //timerChartAdd.Enabled = false;
+            //checkBoxScaled.Visible = false;
+            //buttonSaveChart.Visible = true;
+
+
+
+        }
+
+        private void buttonSendToDB_Click(object sender, EventArgs e)
+        {
+            if (textBoxReadToDB.TextLength > 0)
+            {
+                System.Threading.Thread.Sleep(2000);
+                SqlConnection connection = new SqlConnection(connectSSDB);
+
+                string sqlInsertQuery = "INSERT INTO LOG_DATA_AI (TAG_ID, Value) VALUES (@TAG_ID, @Value)";
+
+                SqlCommand command = new SqlCommand(sqlInsertQuery, connection);
+
+                command.Parameters.AddWithValue("@TAG_ID", comboBoxTAG_ID.Text);
+                command.Parameters.AddWithValue("@Value", textBoxReadToDB.Text);
+
+                connection.Open();
+
+
+                //SqlCommand command = new SqlCommand("INSERT INTO LOG_DATA_AI (TAG_ID, Value) VALUES (@TAG_ID, @Value)", connection);
+                //command.Parameters.AddWithValue("@TAG_ID", comboBoxTAG_ID);
+                //command.Parameters.AddWithValue("@Value", textBoxReadToDB);
+
+                
+
+                command.ExecuteNonQuery();
+                connection.Close();
+
+                MessageBox.Show("Data has successfully been sent to database");
+            }
+
+        }
     }
+
+
+       
+
+       
     }
+    
 
